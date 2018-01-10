@@ -7,7 +7,7 @@
         },
         { "title": "PERSON", "url": "person" },
         {
-            "title": "ACCOUNT1",
+            "title": "ACCOUNT",
             "child": [
                 { "title": "AR", "url": "ar" },
                 { "title": "ARFORM", "url": "arform" }
