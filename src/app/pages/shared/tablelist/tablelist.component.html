@@ -1,0 +1,23 @@
+<div class="table-responsive">
+    <table class="table table-hover table-striped">
+        <thead>
+            <tr>
+                <th>NO.</th>
+                <th *ngFor="let column of columns">
+                    {{column.title}}
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let data of datas; let i=index">
+
+                <td>{{i+1}}</td>
+                <td *ngFor="let column of columns">
+                    {{data[column.field | demopipe] | demo2pipe: column.field}}
+                </td>
+
+            </tr>
+        </tbody>
+    </table>
+</div>
+{{2 | demopipe: 10}}

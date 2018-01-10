@@ -1,0 +1,7 @@
+{
+    "columns": [
+        { "title": "NAME", "field": "name" },
+        { "title": "EMAIL", "field": "email" },
+        { "title": "ADDRESS", "field": "address.address1" }
+    ]
+}

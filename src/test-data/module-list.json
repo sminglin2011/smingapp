@@ -1,0 +1,6 @@
+{
+    "data": [
+        { "title": "USER", "url": "user" },
+        { "title": "ACCOUNT", "url": "account" }
+    ]
+}

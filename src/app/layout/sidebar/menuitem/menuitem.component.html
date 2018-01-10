@@ -1,0 +1,25 @@
+<ul class="nav sidebar">
+    <li routerLinkActive="active">
+        <!-- <span [ngClass]="{'glyphicon glyphicon-blackboard': true}" aria-hidden="true"></span> -->
+        <a [routerLink]="item.url" (click)="menuitemCollapsed = !menuitemCollapsed"> <span class="glyphicon glyphicon-blackboard" aria-hidden="true"></span>{{item.title}}</a>
+
+    </li>
+    <li [collapse]="menuitemCollapsed" *ngFor="let childMenu of item.child">
+        <div class="submittitle">
+            <app-menuitem [item]="childMenu"></app-menuitem>
+        </div>
+    </li>
+</ul>
+
+<!-- <ul class="nav nav-sidebar">
+    <li class="active"><a href="#home" data-toggle="tab">主页 <span
+                        class="sr-only">(current)</span></a></li>
+    <li><a href="#box" data-toggle="tab">盒子演示</a></li>
+    <li><a href="#calendar" data-toggle="tab">日历演示</a></li>
+    <li><a href="#form" data-toggle="tab">表单演示</a></li>
+</ul>
+<ul class="nav nav-sidebar">
+    <li><a href="#" data-toggle="tab">个人信息</a></li>
+    <li><a href="#" data-toggle="tab">修改密码</a></li>
+
+</ul> -->

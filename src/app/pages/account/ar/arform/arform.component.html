@@ -1,0 +1,33 @@
+<form #userForm="ngForm" (ngSubmit)="submitForm(userForm)">
+    <legend>Form title</legend>
+
+    <div class="input-group">
+        <label for="name">name</label>
+        <input type="text" class="form-control" [(ngModel)]="user.name" name="name" placeholder="Input field">
+    </div>
+
+
+    <div class="input-group">
+        <label for="email">email</label>
+        <input type="text" class="form-control" ngModel name="email" id="email" placeholder="Input field">
+    </div>
+
+
+    <div class="input-group">
+        <fieldset ngModelGroup="address">
+
+            <div class="input-group">
+
+                <span class="label">address1</span>
+                <input type="text" ngModel name="address1">
+            </div>
+
+        </fieldset>
+    </div>
+
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+
+    <button type="button" class="btn btn-default" (click)="nextpage()">Next Page</button>
+
+</form>

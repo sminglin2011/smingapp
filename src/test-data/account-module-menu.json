@@ -1,0 +1,17 @@
+{
+    "data": [{
+            "title": "COMPONE",
+            "child": [
+                { "title": "SUBMENU", "url": "url" }
+            ]
+        },
+        { "title": "PERSON", "url": "person" },
+        {
+            "title": "ACCOUNT",
+            "child": [
+                { "title": "AR", "url": "ar" },
+                { "title": "ARFORM", "url": "arform" }
+            ]
+        }
+    ]
+}
