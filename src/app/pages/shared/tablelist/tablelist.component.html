@@ -6,6 +6,7 @@
                 <th *ngFor="let column of columns">
                     {{column.title}}
                 </th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -15,7 +16,17 @@
                 <td *ngFor="let column of columns">
                     {{data[column.field | demopipe] | demo2pipe: column.field}}
                 </td>
-
+                <td>
+                    <a href="javascript:void(0);"><span class="glyphicon glyphicon-option-horizontal" aria-hidden="true"
+                        [popover]="popbuttons" #pop="bs-popover"
+                        placement="left"></span></a>
+                    <ng-template #popbuttons>
+                        <div (mouseleave)="pop.hide()" class="{width: 100px; height: 40px;}">
+                            <div> button group </div>
+                            <div> button group </div>
+                        </div>
+                    </ng-template>
+                </td>
             </tr>
         </tbody>
     </table>

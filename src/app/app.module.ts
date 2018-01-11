@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { LayoutModule } from './layout/layout.module';
 import { NavbarComponent } from './layout/narbar/navbar.component';
-import { CollapseModule, AccordionModule } from 'ngx-bootstrap';
+import { CollapseModule, AccordionModule, PopoverModule } from 'ngx-bootstrap';
 import { AppService } from './app.service';
 import { HttpModule } from '@angular/http';
 import { PagesComponent } from './pages/pages.component';
@@ -18,13 +18,15 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent
+    NavbarComponent,
+
   ],
   imports: [
     BrowserModule,
     HttpModule,
     CollapseModule.forRoot(),
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    PopoverModule.forRoot()
   ],
   providers: [
     AppService,

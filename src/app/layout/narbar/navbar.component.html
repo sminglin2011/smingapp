@@ -41,8 +41,14 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="#">设置</a></li>
-                <li><a href="#">退出</a></li>
+                <li><a href="javascript:void(0);" [popover]="welcome" #pop="bs-popover" placement="bottom">退出</a></li>
             </ul>
         </div>
     </div>
+    <ng-template #welcome>
+        <div>
+            <li><a href="#">设置</a></li>
+            <li><a href="javascript:void(0);">退出</a></li>
+        </div>
+    </ng-template>
 </nav>
