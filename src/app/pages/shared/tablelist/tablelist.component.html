@@ -17,13 +17,20 @@
                     {{data[column.field | demopipe] | demo2pipe: column.field}}
                 </td>
                 <td>
+                    <p-overlayPanel #op>
+                        Content
+                    </p-overlayPanel>
+
+                    <span type="button" icon="fa-check" pButton (click)="op.show($event, actualTarget)"></span>
+                    <div #actualTarget></div>
+
                     <a href="javascript:void(0);"><span class="glyphicon glyphicon-option-horizontal" aria-hidden="true"
                         [popover]="popbuttons" #pop="bs-popover"
                         placement="left"></span></a>
                     <ng-template #popbuttons>
                         <div (mouseleave)="pop.hide()" class="{width: 100px; height: 40px;}">
-                            <div> button group </div>
-                            <div> button group </div>
+                            <button pButton type="button" (click)="count()" icon="fa-check" label="Increase"></button>
+                            <button pButton type="button" icon="fa-check" iconPos="left"></button>
                         </div>
                     </ng-template>
                 </td>
@@ -31,4 +38,3 @@
         </tbody>
     </table>
 </div>
-{{2 | demopipe: 10}}

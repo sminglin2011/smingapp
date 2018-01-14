@@ -1,0 +1,44 @@
+<p-panel header="Add User">
+    <div class="ui-grid ui-grid-responsive ui-grid-pad ui-fluid" style="margin: 10px 0px">
+        <div class="ui-g">
+            <div class="ui-g-12 ui-md-6 ui-lg-4">
+                <div class="ui-inputgroup">
+                    <span class="ui-inputgroup-addon">Password</span>
+                    <input id="input" type="text" pPassword>
+                </div>
+            </div>
+
+            <div class="ui-g-12 ui-md-6 ui-lg-4">
+                <div class="ui-inputgroup">
+                    <span class="ui-inputgroup-addon">@</span>
+                    <input type="text" pInputText placeholder="Email">
+                </div>
+            </div>
+
+            <div class="ui-g-12 ui-md-6 ui-lg-4">
+                <div class="ui-inputgroup">
+                    <span class="ui-inputgroup-addon">Address City</span>
+                    <input type="text" pInputText placeholder="Website">
+                </div>
+            </div>
+        </div>
+
+
+        <div class="ui-g">
+            <form (ngSubmit)="onSubmit()" [formGroup]="form">
+
+                <div *ngFor="let field of fields" class="ui-g-12 ui-md-6 ui-lg-4">
+                    <app-dynamic-form [field]="field" [form]="form"></app-dynamic-form>
+                </div>
+
+                <div class="ui-g-12 ui-md-6 ui-lg-4">
+                    <button type="submit" [disabled]="!form.valid">Save</button>
+                </div>
+            </form>
+
+            <div *ngIf="payLoad" class="ui-g-12 ui-md-6 ui-lg-4">
+                <strong>Saved the following values</strong><br>{{payLoad}}
+            </div>
+        </div>
+    </div>
+</p-panel>

@@ -1,0 +1,7 @@
+<li class="li_menu" *ngFor="let item of items">
+    <i class="fa {{item.icon}}"></i>&nbsp;&nbsp;<a *ngIf="item.url else elsetemp" [routerLink]="item.url">{{item.label}}</a>
+    <ng-template #elsetemp><a>{{item.label}}</a></ng-template>
+    <ul class="ul_menu" *ngIf="item.items">
+        <app-sidemenu [items]="item.items"></app-sidemenu>
+    </ul>
+</li>

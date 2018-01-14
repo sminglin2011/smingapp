@@ -1,5 +1,12 @@
 {
-    "data": [
-        { "title": "USER", "url": "userlist" }
-    ]
+    "data": [{
+        "label": "UserList",
+        "icon": "fa-user-o",
+        "url": "userlist",
+        "items": [{
+            "label": "New",
+            "url": "add",
+            "icon": "fa-plus"
+        }]
+    }]
 }

@@ -1,0 +1,11 @@
+<!-- Side navigation and main page (module default page template)-->
+<div class="sidenav" [ngStyle]="{'display': hideorshowsidebar ? 'block': 'none'}" [@fadeIn]>
+    <a href="javascript:void(0);" (click)="hideorshow()"><i class="fa fa-remove fa-1x"></i></a>
+    <app-sidenav [_items]="items"></app-sidenav>
+</div>
+<a href="javascript:void(0);" (click)="hideorshow()">
+    <div class="showsidebar" [ngStyle]="{'left': hideorshowsidebar ? '160px' : 0}"><i class="fa fa-server fa-1x"></i></div>
+</a>
+<div class="main" [ngStyle]="{'margin-left': hideorshowsidebar ? '160px' : 0}">
+    <router-outlet></router-outlet>
+</div>

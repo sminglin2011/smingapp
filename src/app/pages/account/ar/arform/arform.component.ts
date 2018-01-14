@@ -4,7 +4,6 @@ import { Router } from '@angular/router';
 import { SessionStorageService } from 'ngx-webstorage';
 import { WindowRef } from '../../../shared/winref/windowRef.service';
 import { Dc1Component } from '../../../shared/dc1/dc1.component';
-
 @Component({
   selector: 'app-arform',
   templateUrl: './arform.component.html',
@@ -32,6 +31,8 @@ export class ArformComponent implements OnInit {
   }
   nextpage() {
     const dynamiCom = this.cfr.resolveComponentFactory(Dc1Component);
+    const {inputs, outputs} = dynamiCom;
+    console.log(inputs, outputs, 'inputs and outpus');
     this.dynamiTemp.createComponent(dynamiCom);
   }
 

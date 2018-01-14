@@ -1,3 +1,24 @@
-<p>
-  pagetemplate works!
-</p>
+<!-- <div class="col-xs-0 col-sm-3 col-md-2 sidebar-offcanvas sidebar" [collapse]="sidemenuCollapsed">
+    <span *ngIf="!sidemenuCollapsed" class="glyphicon glyphicon-triangle-right" aria-hidden="true" (click)="sidemenuCollapse()"></span>Hide
+    <app-sidebar [menuList]="menuList"></app-sidebar>
+</div>
+<div *ngIf="sidemenuCollapsed">
+    <span class="glyphicon glyphicon-triangle-left" aria-hidden="true" (click)="sidemenuCollapse()">show</span>
+</div>
+<div class="contrainer">
+    <router-outlet>
+        <ng-content></ng-content>
+    </router-outlet>
+</div> -->
+<div class="main">
+    <div #showSidebar class="showSidebar">
+        <a href="javascript:void(0);"><i class="fa fa-server fa-2x" (click)="sidebar.style.display='block'; showSidebar.style.display='none'"></i></a>
+    </div>
+    <div class="left" #sidebar>
+        <a href="javascript:void(0);"><i class="fa fa-remove fa-2x" (click)="sidebar.style.display='none'; showSidebar.style.display='block'"></i></a>
+        <app-sidebar [menuList]="menuList"></app-sidebar>
+    </div>
+    <div class="right">
+        <router-outlet></router-outlet>
+    </div>
+</div>

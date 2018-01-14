@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-dc1',
@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Dc1Component implements OnInit {
 
+  @Input() inputParam;
+  @Input() inputParam2;
+  // @Output() outputFn1: EventEmitter<>;
   constructor() { }
 
   ngOnInit() {

@@ -4,13 +4,15 @@
 
 /* 顶部导航栏占了 50px，下移内容部分 */
 
-body {
+
+/* body {
     padding-top: 50px;
-}
+} */
 
 
 /* 顶部导航栏，隐藏默认显示的1px边框 */
 
-.navbar-fixed-top {
+
+/* .navbar-fixed-top {
     border: 0;
-}
+} */

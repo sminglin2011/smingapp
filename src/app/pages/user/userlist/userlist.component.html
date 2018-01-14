@@ -1,1 +1,9 @@
-<app-tablelist [columns]="columns" [datas]="datas"></app-tablelist>
+<div class="ui-g">
+    <div class="ui-g-12 ui-md-12 ui-lg-12">
+        <button pButton type="button" label="ADD" routerLink="/user/add"></button>
+    </div>
+
+    <div class="ui-g-12 ui-md-12 ui-lg-12">
+        <app-tablelist [columns]="columns" [datas]="datas"></app-tablelist>
+    </div>
+</div>

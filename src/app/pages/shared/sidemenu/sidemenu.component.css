@@ -1,0 +1,8 @@
+.li_menu {
+    list-style-type: none;
+    margin-left: 5px;
+}
+
+.ul_menu {
+    margin-left: -15px
+}

@@ -1,0 +1,17 @@
+<div [formGroup]="form">
+    <!-- <label [attr.for]="field.key">{{field.label}}</label> -->
+
+    <div [ngSwitch]="field.controlType">
+
+        <div class="ui-inputgroup" *ngSwitchCase="'textBox'">
+            <span class="ui-inputgroup-addon">{{field.label}}</span>
+            <input type="text" pInputText placeholder="{{field.label}}" [formControlName]="field.key" [id]="field.key" [type]="field.type">
+        </div>
+        <select [id]="field.key" *ngSwitchCase="'dropdown'" [formControlName]="field.key">
+        <option *ngFor="let opt of field.options" [value]="opt.key">{{opt.value}}</option>
+      </select>
+
+    </div>
+
+    <div class="errorMessage" *ngIf="!isValid">{{field.label}} is required</div>
+</div>
