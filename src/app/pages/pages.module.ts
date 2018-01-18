@@ -3,13 +3,16 @@ import { CommonModule } from '@angular/common';
 
 import { ChartModule } from 'primeng/primeng';
 
-import { PagesComponent } from './pages.component';
 import { RouterModule, Routes } from '@angular/router';
 import { SharedModule } from './shared/shared.module';
+import { PagesComponent } from './pages.component';
 
 
 const routes: Routes = [
-  { path: '', component: PagesComponent},
+  { path: '', children: [
+  ]},
+  { path: 'account', loadChildren: './pages/account/account.module#AccountModule'},
+    { path: 'user', loadChildren: './pages/user/user.module#UserModule' }
 ];
 
 @NgModule({
@@ -19,10 +22,8 @@ const routes: Routes = [
     ChartModule
   ],
   declarations: [
-    PagesComponent
   ],
   exports: [
-    PagesComponent
   ]
 })
 export class PagesModule { }

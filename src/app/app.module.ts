@@ -9,31 +9,40 @@ import { CollapseModule, AccordionModule, PopoverModule } from 'ngx-bootstrap';
 import { AppService } from './app.service';
 import { HttpModule } from '@angular/http';
 import { PagesComponent } from './pages/pages.component';
-import { ButtonModule, OverlayPanelModule} from 'primeng/primeng';
+import { InputTextModule, ButtonModule, GrowlModule, PanelModule } from 'primeng/primeng';
+import { LoginpageComponent } from './loginpage/loginpage.component';
+import { AuthGuardService } from './service/authGuard.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const routes: Routes = [
-  { path: 'pages', loadChildren: './pages/pages.module#PagesModule'},
-  { path: 'account', loadChildren: './pages/account/account.module#AccountModule' },
-  { path: 'user', loadChildren: './pages/user/user.module#UserModule' }
+  { path: 'loginpage', component: LoginpageComponent},
+  { path: '', redirectTo: 'pages', pathMatch: 'full'},
+  { path: 'pages', component: PagesComponent, children: [
+    { path: 'account', loadChildren: './pages/account/account.module#AccountModule'},
+    { path: 'user', loadChildren: './pages/user/user.module#UserModule' }
+  ]} // , canActivate: [AuthGuardService]
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
+    LoginpageComponent, PagesComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     HttpModule,
+    FormsModule, ReactiveFormsModule,
     CollapseModule.forRoot(),
     RouterModule.forRoot(routes),
     PopoverModule.forRoot(),
-    ButtonModule, OverlayPanelModule
+    InputTextModule, ButtonModule, GrowlModule, PanelModule
   ],
   providers: [
     AppService,
-    HttpModule
+    HttpModule,
+    AuthGuardService
   ],
   bootstrap: [AppComponent]
 })
