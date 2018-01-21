@@ -19,7 +19,8 @@ const routes: Routes = [
   { path: '', redirectTo: 'pages', pathMatch: 'full'},
   { path: 'pages', component: PagesComponent, children: [
     { path: 'account', loadChildren: './pages/account/account.module#AccountModule'},
-    { path: 'user', loadChildren: './pages/user/user.module#UserModule' }
+    { path: 'user', loadChildren: './pages/user/user.module#UserModule' },
+    { path: 'tingkat', loadChildren: './pages/tingkat/tingkat.module#TingkatModule' }
   ]} // , canActivate: [AuthGuardService]
 ];
 

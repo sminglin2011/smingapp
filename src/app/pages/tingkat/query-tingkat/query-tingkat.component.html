@@ -1,0 +1,61 @@
+<p-fieldset [toggleable]="true">
+    <p-header>Tingkat Query</p-header>
+    <div class="ui-g ui-fluid">
+        <div class="ui-g-12 ui-md-4">
+            <div class="ui-inputgroup">
+                <button pButton type="button" icon="fa-search"></button>
+                <!-- <input type="text" pInputText placeholder="Postal Code"> -->
+                <p-inputMask mask="999999" [(ngModel)]="postcal_code" placeholder="postal code"></p-inputMask>
+            </div>
+        </div>
+        <div class="ui-g-12 ui-md-4">
+            <div class="ui-inputgroup">
+                <span class="ui-inputgroup-addon"><i class="fa fa-building"></i></span>
+                <input type="text" pInputText placeholder="Block NO.">
+            </div>
+        </div>
+        <div class="ui-g-12 ui-md-4">
+            <div class="ui-inputgroup">
+                <span class="ui-inputgroup-addon"><i class="fa fa-building-o"></i></span>
+                <input type="text" pInputText placeholder="Floor Unit NO.">
+            </div>
+        </div>
+        <div class="ui-g-12 ui-md-12">
+            <div class="ui-inputgroup">
+                <span class="ui-inputgroup-addon"><i class="fa fa-building"></i></span>
+                <input type="text" pInputText placeholder="Address">
+            </div>
+        </div>
+        <div class="ui-g-12 ui-md-4">
+            <div class="ui-inputgroup">
+                <span class="ui-inputgroup-addon"><i class="fa fa-mobile-phone"></i></span>
+                <!-- <input type="text" pInputText placeholder="Mobile"> -->
+                <p-inputMask mask="9999-9999" [(ngModel)]="mobile" placeholder="Mobile"></p-inputMask>
+            </div>
+        </div>
+        <div class="ui-g-12 ui-md-4">
+            <div class="ui-inputgroup">
+                <span class="ui-inputgroup-addon"><i class="fa fa-user"></i></span>
+                <input type="text" pInputText placeholder="Customer Name">
+            </div>
+        </div>
+        <div class="ui-g-12 ui-md-4">
+            <div class="ui-inputgroup">
+                <span class="ui-inputgroup-addon"><i class="fa fa-envelope"></i></span>
+                <input type="text" pInputText placeholder="Email">
+            </div>
+        </div>
+        <div class="ui-g-12 ui-md-2">
+            <button pButton type="button" (click)="search()" label="Search"></button>
+        </div>
+        <div class="ui-g-12 ui-md-2">
+            <a pButton type="button" routerLink="add" label="New"></a>
+        </div>
+    </div>
+</p-fieldset>
+<p-panel [toggleable]="true">
+    <p-header>
+        query result table
+    </p-header>
+    <app-tablelist [columns]="columns" [datas]="datas"></app-tablelist>
+</p-panel>

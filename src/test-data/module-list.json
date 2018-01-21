@@ -1,6 +1,9 @@
 {
     "data": [
+        { "title": "TINGKAT", "url": "tingkat" },
+        { "title": "CATERING", "url": "catering" },
         { "title": "USER", "url": "user" },
         { "title": "ACCOUNT", "url": "account" }
+
     ]
 }

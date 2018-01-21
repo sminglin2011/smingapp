@@ -1,0 +1,207 @@
+<p-panel>
+    <p-header>
+        <div class="ui-helper-clearfix">
+            <span class="ui-panel-title" style="font-size:16px;display:inline-block;margin-top:2px">New Tingkat</span>
+
+            <a href="javascript:history.go(-1);"><i [ngStyle]="{'float':'right'}" class="fa fa-remove fa-2x"></i></a>
+        </div>
+    </p-header>
+    <div class="panel panel-default">
+        <div>
+            <div class="ui-g ui-fluid">
+                <div class="ui-g-12 ui-md-4">
+                    <div class="ui-inputgroup">
+                        <button pButton type="button" icon="fa-search" tabindex="2" (click)="searchPostalCode()"></button>
+                        <!-- <input type="text" pInputText placeholder="Postal Code"> -->
+                        <p-inputMask mask="999999" [(ngModel)]="postcal_code" placeholder="postal code" tabindex="1"></p-inputMask>
+                    </div>
+                </div>
+                <div class="ui-g-12 ui-md-4">
+                    <div class="ui-inputgroup">
+                        <span class="ui-inputgroup-addon"><i class="fa fa-building"></i></span>
+                        <input type="text" [(ngModel)]="block" pInputText placeholder="Block NO." tabindex="3">
+                    </div>
+                </div>
+                <div class="ui-g-12 ui-md-4">
+                    <div class="ui-inputgroup">
+                        <span class="ui-inputgroup-addon"><i class="fa fa-hashtag"></i></span>
+                        <input type="text" [(ngModel)]="unit" pInputText placeholder="Unit NO." tabindex="4">
+                    </div>
+                </div>
+                <div class="ui-g-12 ui-md-12">
+                    <div class="ui-inputgroup">
+                        <span class="ui-inputgroup-addon"><i class="fa fa-building"></i></span>
+                        <input type="text" [(ngModel)]="address" pInputText placeholder="Address" tabindex="5">
+                    </div>
+                </div>
+                <div class="ui-g-12 ui-md-4">
+                    <div class="ui-inputgroup">
+                        <span class="ui-inputgroup-addon"><i class="fa fa-user"></i></span>
+                        <input type="text" pInputText placeholder="Customer Name" tabindex="6">
+                    </div>
+                </div>
+                <div class="ui-g-12 ui-md-4">
+                    <div class="ui-inputgroup">
+                        <span class="ui-inputgroup-addon"><i class="fa fa-mobile-phone"></i></span>
+                        <!-- <input type="text" pInputText placeholder="Mobile"> -->
+                        <p-inputMask mask="9999-9999" [(ngModel)]="mobile" placeholder="Mobile"></p-inputMask>
+                    </div>
+                </div>
+                <div class="ui-g-12 ui-md-4">
+                    <div class="ui-inputgroup">
+                        <span class="ui-inputgroup-addon"><i class="fa fa-phone"></i></span>
+                        <input type="text" pInputText placeholder="Tel">
+                    </div>
+                </div>
+                <div class="ui-g-12 ui-md-12">
+                    <div class="ui-inputgroup">
+                        <span class="ui-inputgroup-addon"><i class="fa fa-envelope"></i></span>
+                        <input type="text" pInputText placeholder="Email">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-danger">
+        <div class="ui-g ui-fluid">
+            <div class="ui-g-12 ui-md-12">
+                <div class="ui-g-3 ui-md-2">
+                    <p-checkbox name="group1" value="New York" label="Mon" [(ngModel)]="mon" inputId="mon"></p-checkbox>
+                </div>
+                <div class="ui-g-3 ui-md-2">
+                    <p-checkbox name="group1" value="San Francisco" label="Tue" [(ngModel)]="tue" inputId="tue"></p-checkbox>
+                </div>
+                <div class="ui-g-3 ui-md-2">
+                    <p-checkbox name="group1" value="Los Angeles" label="Wed" [(ngModel)]="wed" inputId="wed"></p-checkbox>
+                </div>
+                <div class="ui-g-3 ui-md-2">
+                    <p-checkbox name="group1" value="New York" label="Thu" [(ngModel)]="thu" inputId="thu"></p-checkbox>
+                </div>
+                <div class="ui-g-3 ui-md-2">
+                    <p-checkbox name="group1" value="San Francisco" label="Fri" [(ngModel)]="fri" inputId="fri"></p-checkbox>
+                </div>
+                <div class="ui-g-3 ui-md-2">
+                    <p-checkbox name="group1" value="Los Angeles" label="Sta" [(ngModel)]="sta" inputId="sta"></p-checkbox>
+                </div>
+                <div class="ui-g-3 ui-md-2">
+                    <p-checkbox name="group1" value="New York" label="Sun" [(ngModel)]="sun" inputId="sun"></p-checkbox>
+                </div>
+                <div class="ui-g-3 ui-md-2">
+                    <p-checkbox name="group1" value="San Francisco" label="Holiday" [(ngModel)]="holiday" inputId="holiday"></p-checkbox>
+                </div>
+            </div>
+            <div class="ui-g-12 ui-md-4">
+                <div class="ui-inputgroup" style="padding-top:5px;">
+                    <p-listbox [options]="mealType" [(ngModel)]="selectedCity" [style]="{'width':'200px'}" optionLabel="name"></p-listbox>
+                </div>
+            </div>
+            <div class="ui-g-12 ui-md-4">
+                <div class="ui-g">
+                    <div class="ui-g-12">
+                        <div class="ui-inputgroup">
+                            <span class="ui-inputgroup-addon"><i class="fa fa-bullseye"></i></span>
+                            <input type="text" pInputText placeholder="No. of days">
+                        </div>
+                    </div>
+                    <div class="ui-g-12">
+                        <div class="ui-inputgroup">
+                            <p-inputSwitch onLabel="Yes" offLabel="No" [(ngModel)]="tingkat"></p-inputSwitch>
+                            <span>Tingkat</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ui-g-12 ui-md-4">
+                <div class="ui-g-12">
+                    <div class="ui-inputgroup">
+                        <!-- <span class="ui-inputgroup-addon"><i class="fa fa-calendar"></i></span> -->
+                        <!-- <input type="text" pInputText > -->
+                        <p-calendar [(ngModel)]="startDate" placeholder="Start Date" [showIcon]="true" dateFormat="dd/mm/yy"></p-calendar>
+                    </div>
+                </div>
+                <div class="ui-g-12">
+                    <div class="ui-inputgroup">
+                        <!-- <span class="ui-inputgroup-addon"><i class="fa fa-calendar"></i></span> -->
+                        <!-- <input type="text" pInputText placeholder="End Date"> -->
+                        <p-calendar [(ngModel)]="endDate" placeholder="End Date" [showIcon]="true" dateFormat="dd/mm/yy"></p-calendar>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ui-g-12 ui-md-8">
+                <div class="ui-g-2">
+                    <p-checkbox name="group1" value="New York" label="Trail" [(ngModel)]="trail" inputId="trail"></p-checkbox>
+                </div>
+                <div class="ui-g-3">
+                    <p-checkbox name="group1" value="San Francisco" label="New" [(ngModel)]="newCustomer" inputId="newCustomer"></p-checkbox>
+                </div>
+                <div class="ui-g-3">
+                    <p-checkbox name="group1" value="Los Angeles" label="Continue" [(ngModel)]="continue" inputId="continue"></p-checkbox>
+                </div>
+            </div>
+            <div class="ui-g-12 ui-md-4">
+                <div class="ui-inputgroup">
+                    <p-dropdown [options]="drivers" [(ngModel)]="driver" optionLabel="name" placeholder="Select a Driver"></p-dropdown>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="panel panel-danger">
+        <div class="ui-g ui-fluid">
+            <div class="ui-g-12 ui-md-4">
+                <div class="ui-inputgroup" style="padding-left: 10px">
+                    <p-listbox [options]="menus" [(ngModel)]="menu" [style]="{'width':'200px'}" [listStyle]="{'max-height':'250px'}" optionLabel="name"></p-listbox>
+                </div>
+            </div>
+            <div class="ui-g-12 ui-md-4">
+                <div class="ui-g-12">
+                    <div class="ui-inputgroup">
+                        <span class="ui-inputgroup-addon"><i class="fa fa-user"></i></span>
+                        <input type="text" pInputText placeholder="No. of pax">
+                    </div>
+                </div>
+                <div class="ui-g-12">
+                    <div class="ui-inputgroup">
+                        <p-inputSwitch onLabel="Yes" offLabel="No" [(ngModel)]="withRice"></p-inputSwitch>
+                        <span>W/Rice</span>
+                    </div>
+                </div>
+                <div class="ui-g-12">
+                    <div class="ui-inputgroup">
+                        <span class="ui-inputgroup-addon"><i class="fa fa-plus-square-o"></i></span>
+                        <input type="text" pInputText placeholder="More Rice">
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="ui-g-12 ui-md-4">
+                <div class="ui-g-12">
+                    <div class="ui-inputgroup">
+                        <span class="ui-inputgroup-addon"><i class="fa fa-dollar"></i></span>
+                        <input type="text" pInputText placeholder="Price">
+                    </div>
+                </div>
+                <div class="ui-g-12">
+                    <div class="ui-inputgroup">
+                        <span class="ui-inputgroup-addon"><i class="fa fa-dollar"></i></span>
+                        <input type="text" pInputText placeholder="GST">
+                    </div>
+                </div>
+                <div class="ui-g-12">
+                    <div class="ui-inputgroup">
+                        <span class="ui-inputgroup-addon"><i class="fa fa-dollar"></i></span>
+                        <input type="text" pInputText placeholder="Total">
+                    </div>
+                </div>
+                <div class="ui-g-12">
+                    <div class="ui-inputgroup">
+                        <button pButton label="Save"></button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</p-panel>
