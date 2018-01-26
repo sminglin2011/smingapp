@@ -1,9 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { User } from './user-model';
-import { FieldBase } from './fieldbase';
-import { TextBox } from './textBox';
+import { FieldBase } from '../shared/dynamic-form/fieldbase';
+import { TextBox } from '../shared/dynamic-form/textBox';
 import { FormControl, Validators, FormGroup } from '@angular/forms';
+import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class UserService {
@@ -25,10 +27,32 @@ export class UserService {
   }
 
   getTableData() {
-    return this.http.get('test-data/table-data.json')
-    .map((rep: Response) => {
+    return this.http.get('/api/apiUser/getUsers') // ('test-data/table-data.json')
+    .map(
+      (rep: Response) => {
+      console.log('this data if got from api', rep.json());
       return rep.json();
-    });
+      },
+      (err) => {
+        console.error(err);
+        this.handleError(err);
+      });
+  }
+  public handleError(operation: String) {
+    return (err: any) => {
+      const errMsg = `error in ${operation}() retrieving `;
+      console.log(`${errMsg}:`, err);
+      if (err instanceof HttpErrorResponse) {
+          // you could extract more info about the error if you want, e.g.:
+          console.log(`status: ${err.status}, ${err.statusText}`);
+          // errMsg = ...
+      }
+      return Observable.throw(errMsg);
+    };
+  }
+  newUser(user) {
+    console.log('come to post data');
+    return this.http.post('/api/apiUser/newUser', user);
   }
 
   getUser(id) {

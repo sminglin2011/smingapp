@@ -8,7 +8,8 @@ import { UserlistComponent } from './userlist/userlist.component';
 import { TablelistComponent } from '../shared/tablelist/tablelist.component';
 import { PagesComponent } from '../pages.component';
 import { DeshboadComponent } from '../shared/deshboad/deshboad.component';
-import { ButtonModule, InputTextModule, PasswordModule, PanelModule } from 'primeng/primeng';
+import { ButtonModule, InputTextModule, PasswordModule, PanelModule, GrowlModule, MessageModule,
+MessagesModule } from 'primeng/primeng';
 import { UserformComponent } from './userform/userform.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -28,7 +29,9 @@ const routes: Routes = [
     CommonModule,
     RouterModule.forChild(routes),
     SharedModule, ButtonModule, InputTextModule,
-    PasswordModule, PanelModule, FormsModule, ReactiveFormsModule
+    PasswordModule, PanelModule, FormsModule, ReactiveFormsModule,
+    GrowlModule, MessageModule,
+    MessagesModule
   ],
   declarations: [
     UserComponent, UserlistComponent, UserformComponent

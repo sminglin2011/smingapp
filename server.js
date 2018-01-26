@@ -1,3 +1,18 @@
+var mongoose = require('mongoose');
+
+mongoose.connect('mongodb://localhost/smingapp') //连接本地数据库blog
+
+var db = mongoose.connection;
+
+// 连接成功
+db.on('open', function() {
+    console.log('MongoDB Connection Successed');
+});
+// 连接失败
+db.on('error', function() {
+    console.log('MongoDB Connection Error');
+});
+
 // Get dependencies
 const express = require('express');
 const path = require('path');
@@ -18,6 +33,8 @@ app.use(express.static(path.join(__dirname, 'dist')));
 
 // Set our api routes
 app.use('/api', api);
+app.use('/apiUser', require('./server/routes/users_routes'));
+
 
 // Catch all other routes and return the index file
 app.get('*', (req, res) => {

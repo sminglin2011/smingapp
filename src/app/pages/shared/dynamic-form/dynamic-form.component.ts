@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { FieldBase } from '../../user/fieldbase';
+import { FieldBase } from './fieldbase';
 import { FormGroup } from '@angular/forms';
 
 @Component({

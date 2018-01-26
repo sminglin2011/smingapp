@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { User } from '../user-model';
 import { UserService } from '../user.service';
-import { FieldBase } from '../fieldbase';
+import { FieldBase } from '../../shared/dynamic-form/fieldbase';
 import { FormGroup } from '@angular/forms';
 
 @Component({
@@ -24,6 +24,9 @@ export class UserformComponent implements OnInit {
 
   onSubmit() {
     this.payLoad = JSON.stringify(this.form.value);
+    this.service.newUser(this.form.value).subscribe(() => {
+      console.log('component add new one');
+    });
   }
 
 }

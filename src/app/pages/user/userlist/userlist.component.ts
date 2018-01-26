@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user.service';
+import { Message } from 'primeng/components/common/message';
 
 @Component({
   selector: 'app-userlist',
@@ -9,6 +10,7 @@ import { UserService } from '../user.service';
 export class UserlistComponent implements OnInit {
   columns: any;
   datas: any;
+  errMsg: Message[] = [];
   constructor(private service: UserService) { }
 
   ngOnInit() {
@@ -25,8 +27,10 @@ export class UserlistComponent implements OnInit {
     );
   }
   loadData() {
-    this.service.getTableData().subscribe((data) => {
-      this.datas = data['data'];
-    });
+    this.service.getTableData().subscribe(
+      (data) => {
+      console.log('list component got data = ', data);
+      this.datas = data; // ['data'];
+      }, err => this.errMsg.push({severity: 'error', summary: '', detail: <any>err}));
   }
 }
