@@ -1,10 +1,24 @@
-<p-growl [(value)]="msgs"></p-growl>
-<div class="ui-g">
-    <div class="ui-g-12 ui-md-12 ui-lg-12">
+<p-panel header="List Of User">
+    <p-growl [(value)]="msgs"></p-growl>
+    <p-dataTable [value]="datas" [rows]="rows" [paginator]="true" [totalRecords]="totalRecords" [rowsPerPageOptions]="pageSizes" [sortField]="sortF" [sortOrder]="sortO" (onSort)="changeSort($event)" [lazy]="true" (onLazyLoad)="loadCarsLazy($event)" selectionMode="single"
+        [(selection)]="selectedRow" dataKey="id" (onRowDblclick)="dblClickRow($event)">
+        <!-- <p-header>List of User</p-header> -->
+        <p-column field="username" header="UserName" [sortable]="true"></p-column>
+        <p-column field="email" header="Email" [sortable]="true"></p-column>
+        <p-column field="mobile" header="Mobile" [sortable]="true"></p-column>
+        <p-column field="joinDate" header="Join Date" [sortable]="true">
+            <ng-template let-user="rowData" pTemplate="body">
+                {{user.joinDate | date: 'dd/MM/yyyy'}}
+            </ng-template>
+        </p-column>
+        <ng-template pTemplate="paginatorLeft">
+            <button type="button" pButton icon="fa-refresh"></button>
+        </ng-template>
+        <ng-template pTemplate="paginatorRight">
+            <button type="button" pButton icon="fa-cloud-upload"></button>
+        </ng-template>
+    </p-dataTable>
+    <p-footer>
         <button pButton type="button" label="ADD" routerLink="../add"></button>
-    </div>
-
-    <div class="ui-g-12 ui-md-12 ui-lg-12">
-        <app-tablelist [columns]="columns" [datas]="datas"></app-tablelist>
-    </div>
-</div>
+    </p-footer>
+</p-panel>

@@ -1,0 +1,39 @@
+<p-growl [(value)]="msgs" [style]="{'margin-top':'50px'}"></p-growl>
+<p-tabView>
+    <p-tabPanel header="Menu Category">
+        <p-dataTable [value]="menuCategories" [editable]="true">
+            <p-column field="category" header="Category" [editable]="true"></p-column>
+            <p-column field="sequence" header="Sequence" [editable]="true"></p-column>
+            <p-column styleClass="col-button">
+                <ng-template pTemplate="header">
+                    Action
+                </ng-template>
+                <ng-template let-obj="rowData" pTemplate="body">
+                    <button type="button" pButton icon="fa-save" (click)="saveMenuCategory(obj)"></button>
+                </ng-template>
+            </p-column>
+        </p-dataTable>
+        <br>
+        <p-footer>
+            <button pButton label="New" (click)="newMenuCategory()"></button>
+        </p-footer>
+    </p-tabPanel>
+    <!-- Menu Setup -->
+    <p-tabPanel header="Menu" [disabled]="menuDisabled">
+        <p-dataTable [value]="menus" rowGroupMode="rowspan" sortField="menuCategory">
+            <p-column field="menuCategory" header="Category"></p-column>
+            <p-column field="menuName" header="Menu">
+                <ng-template let-obj="rowData" pTemplate="body">
+                    <a href="javascription:void(0);" routerLink="../add/{{obj.id}}">{{obj.menuName}}</a>
+                </ng-template>
+            </p-column>
+            <p-column field="minPax" header="Min.Pax"></p-column>
+            <p-column field="menuPricePerPax" header="Price per pax"></p-column>
+        </p-dataTable>
+        <br>
+        <p-footer>
+            <button pButton label="New" routerLink="../addmenu"></button>
+        </p-footer>
+    </p-tabPanel>
+
+</p-tabView>

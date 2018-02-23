@@ -1,4 +1,4 @@
-<p-panel>
+<p-panel [formGroup]="formGroup">
     <p-header>
         <div class="ui-helper-clearfix">
             <span class="ui-panel-title" style="font-size:16px;display:inline-block;margin-top:2px">New Tingkat</span>
@@ -7,62 +7,9 @@
         </div>
     </p-header>
     <div class="panel panel-default">
-        <div>
-            <div class="ui-g ui-fluid">
-                <div class="ui-g-12 ui-md-4">
-                    <div class="ui-inputgroup">
-                        <button pButton type="button" icon="fa-search" tabindex="2" (click)="searchPostalCode()"></button>
-                        <!-- <input type="text" pInputText placeholder="Postal Code"> -->
-                        <p-inputMask mask="999999" [(ngModel)]="postcal_code" placeholder="postal code" tabindex="1"></p-inputMask>
-                    </div>
-                </div>
-                <div class="ui-g-12 ui-md-4">
-                    <div class="ui-inputgroup">
-                        <span class="ui-inputgroup-addon"><i class="fa fa-building"></i></span>
-                        <input type="text" [(ngModel)]="block" pInputText placeholder="Block NO." tabindex="3">
-                    </div>
-                </div>
-                <div class="ui-g-12 ui-md-4">
-                    <div class="ui-inputgroup">
-                        <span class="ui-inputgroup-addon"><i class="fa fa-hashtag"></i></span>
-                        <input type="text" [(ngModel)]="unit" pInputText placeholder="Unit NO." tabindex="4">
-                    </div>
-                </div>
-                <div class="ui-g-12 ui-md-12">
-                    <div class="ui-inputgroup">
-                        <span class="ui-inputgroup-addon"><i class="fa fa-building"></i></span>
-                        <input type="text" [(ngModel)]="address" pInputText placeholder="Address" tabindex="5">
-                    </div>
-                </div>
-                <div class="ui-g-12 ui-md-4">
-                    <div class="ui-inputgroup">
-                        <span class="ui-inputgroup-addon"><i class="fa fa-user"></i></span>
-                        <input type="text" pInputText placeholder="Customer Name" tabindex="6">
-                    </div>
-                </div>
-                <div class="ui-g-12 ui-md-4">
-                    <div class="ui-inputgroup">
-                        <span class="ui-inputgroup-addon"><i class="fa fa-mobile-phone"></i></span>
-                        <!-- <input type="text" pInputText placeholder="Mobile"> -->
-                        <p-inputMask mask="9999-9999" [(ngModel)]="mobile" placeholder="Mobile"></p-inputMask>
-                    </div>
-                </div>
-                <div class="ui-g-12 ui-md-4">
-                    <div class="ui-inputgroup">
-                        <span class="ui-inputgroup-addon"><i class="fa fa-phone"></i></span>
-                        <input type="text" pInputText placeholder="Tel">
-                    </div>
-                </div>
-                <div class="ui-g-12 ui-md-12">
-                    <div class="ui-inputgroup">
-                        <span class="ui-inputgroup-addon"><i class="fa fa-envelope"></i></span>
-                        <input type="text" pInputText placeholder="Email">
-                    </div>
-                </div>
-            </div>
-        </div>
+        <!-- <app-new-customer [formGroup]="formGroup.get('customer')"></app-new-customer> -->
     </div>
-    <div class="panel panel-danger">
+    <!-- <div class="panel panel-danger">
         <div class="ui-g ui-fluid">
             <div class="ui-g-12 ui-md-12">
                 <div class="ui-g-3 ui-md-2">
@@ -114,15 +61,11 @@
             <div class="ui-g-12 ui-md-4">
                 <div class="ui-g-12">
                     <div class="ui-inputgroup">
-                        <!-- <span class="ui-inputgroup-addon"><i class="fa fa-calendar"></i></span> -->
-                        <!-- <input type="text" pInputText > -->
                         <p-calendar [(ngModel)]="startDate" placeholder="Start Date" [showIcon]="true" dateFormat="dd/mm/yy"></p-calendar>
                     </div>
                 </div>
                 <div class="ui-g-12">
                     <div class="ui-inputgroup">
-                        <!-- <span class="ui-inputgroup-addon"><i class="fa fa-calendar"></i></span> -->
-                        <!-- <input type="text" pInputText placeholder="End Date"> -->
                         <p-calendar [(ngModel)]="endDate" placeholder="End Date" [showIcon]="true" dateFormat="dd/mm/yy"></p-calendar>
                     </div>
                 </div>
@@ -201,7 +144,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
-    </div>
+    </div> -->
 </p-panel>

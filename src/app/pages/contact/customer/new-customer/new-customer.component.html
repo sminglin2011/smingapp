@@ -1,0 +1,8 @@
+<p-growl [(value)]="msgs" [style]="{'margin-top':'50px'}"></p-growl>
+<p-panel header="New Customer">
+    <app-customer-form [formGroup]="formGroup"></app-customer-form>
+    <p-footer>
+        <button [disabled]="!formGroup.valid" pButton label="Save" (click)="submitForm()"></button>
+        <button pButton label="Close" (click)="close()"></button>
+    </p-footer>
+</p-panel>

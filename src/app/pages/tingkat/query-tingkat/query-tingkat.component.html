@@ -4,8 +4,7 @@
         <div class="ui-g-12 ui-md-4">
             <div class="ui-inputgroup">
                 <button pButton type="button" icon="fa-search"></button>
-                <!-- <input type="text" pInputText placeholder="Postal Code"> -->
-                <p-inputMask mask="999999" [(ngModel)]="postcal_code" placeholder="postal code"></p-inputMask>
+                <p-inputMask mask="999999" placeholder="postal code"></p-inputMask>
             </div>
         </div>
         <div class="ui-g-12 ui-md-4">
@@ -30,7 +29,7 @@
             <div class="ui-inputgroup">
                 <span class="ui-inputgroup-addon"><i class="fa fa-mobile-phone"></i></span>
                 <!-- <input type="text" pInputText placeholder="Mobile"> -->
-                <p-inputMask mask="9999-9999" [(ngModel)]="mobile" placeholder="Mobile"></p-inputMask>
+                <p-inputMask mask="9999-9999" placeholder="Mobile"></p-inputMask>
             </div>
         </div>
         <div class="ui-g-12 ui-md-4">
@@ -45,6 +44,12 @@
                 <input type="text" pInputText placeholder="Email">
             </div>
         </div>
+        <!-- <div class="ui-g-12 ui-md-4">
+            <div class="ui-inputgroup" [formGroup]="myGroup">
+                <span class="ui-inputgroup-addon"><i class="fa fa-envelope"></i></span>
+                <app-dateinput formControlName="myDate"></app-dateinput>
+            </div>
+        </div> -->
         <div class="ui-g-12 ui-md-2">
             <button pButton type="button" (click)="search()" label="Search"></button>
         </div>
@@ -57,5 +62,5 @@
     <p-header>
         query result table
     </p-header>
-    <app-tablelist [columns]="columns" [datas]="datas"></app-tablelist>
+    <!-- <app-tablelist [columns]="columns" [datas]="datas"></app-tablelist> -->
 </p-panel>

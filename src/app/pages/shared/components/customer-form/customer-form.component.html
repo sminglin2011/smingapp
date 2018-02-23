@@ -1,0 +1,32 @@
+<div [formGroup]="formGroup">
+    <div class="ui-g ui-fluid">
+        <div class="ui-g-12 ui-md-12">
+            <app-address [(formGroup)]="formGroup.get('addresses')['controls'][0]"></app-address>
+        </div>
+        <div class="ui-g-12 ui-md-4">
+            <div class="ui-inputgroup">
+                <span class="ui-inputgroup-addon"><i class="fa fa-user"></i></span>
+                <input type="text" formControlName="name" pInputText placeholder="Customer Name">
+            </div>
+        </div>
+        <div class="ui-g-12 ui-md-4">
+            <div class="ui-inputgroup">
+                <span class="ui-inputgroup-addon"><i class="fa fa-mobile-phone"></i></span>
+                <input type="text" formControlName="mobile" pInputText placeholder="Mobile">
+                <!-- <p-inputMask mask="9999-9999" [formControlName="mobile" placeholder="Mobile"></p-inputMask> -->
+            </div>
+        </div>
+        <div class="ui-g-12 ui-md-4">
+            <div class="ui-inputgroup">
+                <span class="ui-inputgroup-addon"><i class="fa fa-phone"></i></span>
+                <input type="text" formControlName="tel" pInputText placeholder="Telephone">
+            </div>
+        </div>
+        <div class="ui-g-12 ui-md-12">
+            <div class="ui-inputgroup">
+                <span class="ui-inputgroup-addon"><i class="fa fa-envelope"></i></span>
+                <input type="text" formControlName="email" pInputText placeholder="Email">
+            </div>
+        </div>
+    </div>
+</div>

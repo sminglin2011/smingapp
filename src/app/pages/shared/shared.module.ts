@@ -15,23 +15,28 @@ import { Dc1Component } from './dc1/dc1.component';
 import { Dc2Component } from './dc2/dc2.component';
 import { DynamicComponent } from './dynamic/dynamic.component';
 import { DialogComponent } from './dialog/dialog.component';
-import { ButtonModule, OverlayPanelModule, SidebarModule, PanelMenuModule,
-  AccordionModule } from 'primeng/primeng';
-import { DataTableModule } from 'angular2-datatable';
+import { ButtonModule, InputTextModule, CalendarModule, OverlayPanelModule,
+  PasswordModule, PanelModule, SidebarModule, AccordionModule,
+  GrowlModule, MessageModule, PanelMenuModule,
+  MessagesModule, DataTableModule, FieldsetModule } from 'primeng/primeng';
 import { ModulepageComponent } from './modulepage/modulepage.component';
 import { SidemenuComponent } from './sidemenu/sidemenu.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { DynamicFormComponent } from './dynamic-form/dynamic-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DateinputComponent } from './dateinput/dateinput.component';
+import { CustomerFormComponent } from './components/customer-form/customer-form.component';
+import { AddressComponent } from './components/address/address.component';
 @NgModule({
   imports: [
     CommonModule,
     RouterModule,
     CollapseModule.forRoot(),
     PopoverModule.forRoot(),
-    ButtonModule, OverlayPanelModule, SidebarModule,
-    DataTableModule, PanelMenuModule, AccordionModule,
-    FormsModule, ReactiveFormsModule
+    FormsModule, ReactiveFormsModule, ButtonModule, InputTextModule, CalendarModule, OverlayPanelModule,
+    PasswordModule, PanelModule, SidebarModule, AccordionModule,
+    GrowlModule, MessageModule, PanelMenuModule,
+    MessagesModule, DataTableModule, FieldsetModule
   ],
   declarations: [
     PagetemplateComponent,
@@ -43,13 +48,17 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     Dc2Component, DynamicComponent, DialogComponent, ModulepageComponent,
     SidemenuComponent,
     SidenavComponent,
-    DynamicFormComponent
+    DynamicFormComponent,
+    DateinputComponent,
+    AddressComponent,
+    CustomerFormComponent
   ],
   exports: [
     PagetemplateComponent,
     TablelistComponent,
     DeshboadComponent, Dc1Component, Dc2Component, DialogComponent,
-    ModulepageComponent, SidenavComponent, DynamicFormComponent
+    ModulepageComponent, SidenavComponent, DynamicFormComponent, DateinputComponent,
+    CustomerFormComponent
   ],
   entryComponents: [
     Dc1Component, Dc2Component, DialogComponent

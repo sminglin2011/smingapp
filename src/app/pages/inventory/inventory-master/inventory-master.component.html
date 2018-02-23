@@ -1,0 +1,45 @@
+<p-growl [(value)]="msgs" [style]="{'margin-top':'50px'}"></p-growl>
+<p-fieldset [toggleable]="true">
+    <p-header>Inventory From</p-header>
+    <div class="ui-g ui-fluid" [formGroup]="formGroup">
+        <div class="ui-g-12 ui-md-4">
+            <div class="ui-inputgroup">
+                <span class="ui-inputgroup-addon"><i class="fa fa-leaf"></i></span>
+                <input type="text" formControlName="description" pInputText placeholder="Description">
+            </div>
+        </div>
+        <div class="ui-g-12 ui-md-4">
+            <div class="ui-inputgroup">
+                <span class="ui-inputgroup-addon"><i class="fa fa-barcode"></i></span>
+                <input type="text" formControlName="category" pInputText placeholder="Category">
+            </div>
+        </div>
+        <div class="ui-g-12 ui-md-4">
+            <div class="ui-inputgroup">
+                <span class="ui-inputgroup-addon"><i class="fa fa-bookmark"></i></span>
+                <!-- <input type="text" formControlName="group" pInputText placeholder="Group"> -->
+                <p-dropdown [options]="groups" formControlName="group"></p-dropdown>
+            </div>
+        </div>
+        <div class="ui-g-12 ui-md-2">
+            <button [disabled]="!formGroup.valid" pButton type="button" label="Save" (click)="submitForm()"></button>
+        </div>
+        <div class="ui-g-12 ui-md-2">
+            <button pButton type="button" label="ReSet" (click)="resetForm()"></button>
+        </div>
+    </div>
+</p-fieldset>
+<p-panel header="Customer List">
+    <div class="ui-g">
+        <p-dataTable [value]="datas" [rows]="rows" [paginator]="true" [totalRecords]="totalRecords" [rowsPerPageOptions]="pageSizes" [sortField]="sortF" [sortOrder]="sortO" (onSort)="changeSort($event)" [lazy]="true" (onLazyLoad)="loadCarsLazy($event)" selectionMode="single"
+            [(selection)]="selectedRow" dataKey="id" (onRowDblclick)="dblClickRow($event)">
+            <!-- <p-header>List of Customer</p-header> -->
+            <p-column field="description" header="Description" [sortable]="true"></p-column>
+            <p-column field="category" header="Category" [sortable]="true"></p-column>
+            <p-column field="group" header="Group" [sortable]="true"></p-column>
+        </p-dataTable>
+    </div>
+    <!-- <p-footer>
+        <button pButton type="button" label="ADD" routerLink="../addCustomer"></button>
+    </p-footer> -->
+</p-panel>

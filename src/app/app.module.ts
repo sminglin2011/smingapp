@@ -18,9 +18,12 @@ const routes: Routes = [
   { path: 'loginpage', component: LoginpageComponent},
   { path: '', redirectTo: 'pages', pathMatch: 'full'},
   { path: 'pages', component: PagesComponent, children: [
-    { path: 'account', loadChildren: './pages/account/account.module#AccountModule'},
+    { path: 'tingkat', loadChildren: './pages/tingkat/tingkat.module#TingkatModule' },
+    { path: 'catering', loadChildren: './pages/catering/catering.module#CateringModule' },
     { path: 'user', loadChildren: './pages/user/user.module#UserModule' },
-    { path: 'tingkat', loadChildren: './pages/tingkat/tingkat.module#TingkatModule' }
+    { path: 'account', loadChildren: './pages/account/account.module#AccountModule'},
+    { path: 'contact', loadChildren: './pages/contact/contact.module#ContactModule' },
+    { path: 'inventory', loadChildren: './pages/inventory/inventory.module#InventoryModule' }
   ]} // , canActivate: [AuthGuardService]
 ];
 

@@ -1,0 +1,18 @@
+{
+    "data": [{
+            "label": "Customer",
+            "icon": "fa-user",
+            "url": "customer",
+            "items": [{
+                "label": "New",
+                "url": "addCustomer",
+                "icon": "fa-plus"
+            }]
+        },
+        {
+            "label": "Driver",
+            "icon": "fa-user-o",
+            "url": "driver"
+        }
+    ]
+}

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TingkatService } from './tingkat.service';
 
 @Component({
   selector: 'app-tingkat',
@@ -8,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 export class TingkatComponent implements OnInit {
 
   menuitems = [];
-  constructor() { }
+  constructor(private service: TingkatService) { }
 
   ngOnInit() {
+    this.service.loadSideMenu().subscribe(data => {
+      this.menuitems = data['data'];
+    });
   }
 
 }

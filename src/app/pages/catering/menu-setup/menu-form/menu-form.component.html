@@ -1,0 +1,63 @@
+<p-growl [(value)]="msgs" [style]="{'margin-top':'50px'}"></p-growl>
+<p-panel header="Menu Form" [formGroup]="formGroup">
+    <div>
+        <div class="ui-g ui-fluid">
+            <div class="ui-g-12 ui-md-4">
+                <p-dropdown formControlName="menuCategory" [options]="menuCategories" [autoWidth]="false" [style]="{'width':'100%'}" placeholder="Select Category"></p-dropdown>
+            </div>
+            <div class="ui-g-12 ui-md-4">
+                <div class="ui-inputgroup">
+                    <span class="ui-inputgroup-addon"><i class="fa fa-dashcube"></i></span>
+                    <input formControlName="menuName" type="text" pInputText placeholder="Menu Name">
+                </div>
+            </div>
+            <div class="ui-g-12 ui-md-4">
+                <div class="ui-inputgroup">
+                    <span class="ui-inputgroup-addon"><i class="fa fa-user"></i></span>
+                    <input type="text" formControlName="minPax" pInputText placeholder="Min. Pax">
+                </div>
+            </div>
+            <div class="ui-g-12 ui-md-4">
+                <div class="ui-inputgroup">
+                    <span class="ui-inputgroup-addon"><i class="fa fa-usd"></i></span>
+                    <input type="text" formControlName="menuPricePerPax" pInputText placeholder="Price Per Pax">
+                </div>
+            </div>
+            <div class="ui-g-12 ui-md-4">
+                <div class="ui-inputgroup">
+                    <span class="ui-inputgroup-addon"><i class="fa fa-usd"></i></span>
+                    <input type="text" formControlName="deliveryCharge" pInputText placeholder="Delivery Charge">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <p-panel header="MenuItems" formArrayName="cateringMenuItems">
+        <div class="ui-g">
+            <div class="ui-g-4">Item Group</div>
+            <div class="ui-g-4">MenuItem</div>
+            <div class="ui-g-4">Sequence</div>
+        </div>
+        <div class="ui-g" *ngFor="let item of formGroup.get('cateringMenuItems')['controls']; let i = index;" [formGroupName]="i">
+            <div class="ui-g-4">
+                <p-dropdown formControlName="itemGroup" [options]="itemGroups" placeholder="Item Group" [autoWidth]="false" [style]="{'width':'100%'}" required="true" appendTo="body"></p-dropdown>
+            </div>
+            <div class="ui-g-4">
+                <p-dropdown formControlName="description" placeholder="Menu Item" [options]="inventories" [autoWidth]="false" [style]="{'width':'100%'}" required="true" appendTo="body"></p-dropdown>
+            </div>
+            <div class="ui-g-4">
+                <div class="ui-inputgroup">
+                    <span class="ui-inputgroup-addon"><i class="fa fa-sort-numeric-down"></i></span>
+                    <input pInputText formControlName="sequence" placeholder="Item sequence">
+                </div>
+            </div>
+        </div>
+        <p-footer>
+            <button pButton label="New Item" (click)="newItem()"></button>
+        </p-footer>
+    </p-panel>
+    <p-footer>
+        <button pButton label="Save" (click)="saveMenu()"></button>
+        <a pButton label="Close" routerLink="/pages/catering/menusetup"></a>
+    </p-footer>
+</p-panel>

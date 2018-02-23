@@ -1,0 +1,11 @@
+{
+    "data": [{
+        "label": "Catering Order",
+        "icon": "fa-th-list",
+        "url": "cateringorder"
+    }, {
+        "label": "Menu Setup",
+        "icon": "fa-th-large",
+        "url": "menusetup"
+    }]
+}

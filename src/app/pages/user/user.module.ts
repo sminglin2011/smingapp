@@ -9,9 +9,12 @@ import { TablelistComponent } from '../shared/tablelist/tablelist.component';
 import { PagesComponent } from '../pages.component';
 import { DeshboadComponent } from '../shared/deshboad/deshboad.component';
 import { ButtonModule, InputTextModule, PasswordModule, PanelModule, GrowlModule, MessageModule,
-MessagesModule } from 'primeng/primeng';
+MessagesModule,
+CalendarModule,
+DataTableModule} from 'primeng/primeng';
 import { UserformComponent } from './userform/userform.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AppUtils } from '../../tools/app.utils';
 
 const routes: Routes = [
   {
@@ -20,22 +23,23 @@ const routes: Routes = [
       { path: '', component: DeshboadComponent },
       { path: 'userlist', component: UserlistComponent },
       { path: 'dashboard', component: DeshboadComponent },
-      { path: 'add', component: UserformComponent}
+      { path: 'add', component: UserformComponent},
+      { path: 'add/:id', component: UserformComponent}
     ]
   }
 ];
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule.forChild(routes),
-    SharedModule, ButtonModule, InputTextModule,
-    PasswordModule, PanelModule, FormsModule, ReactiveFormsModule,
+    RouterModule.forChild(routes), FormsModule, ReactiveFormsModule,
+    SharedModule, ButtonModule, InputTextModule, CalendarModule,
+    PasswordModule, PanelModule,
     GrowlModule, MessageModule,
-    MessagesModule
+    MessagesModule, DataTableModule
   ],
   declarations: [
     UserComponent, UserlistComponent, UserformComponent
   ],
-  providers: [UserService]
+  providers: [UserService, AppUtils]
 })
 export class UserModule {}

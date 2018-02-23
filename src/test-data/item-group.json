@@ -1,0 +1,8 @@
+{
+    "group": [
+        { "value": "beef", "label": "Beef" },
+        { "value": "chicken", "label": "Chicken" },
+        { "value": "vegetable", "label": "Vegetable" },
+        { "value": "dessert", "label": "Dessert" }
+    ]
+}

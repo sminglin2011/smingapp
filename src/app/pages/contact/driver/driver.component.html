@@ -1,0 +1,23 @@
+<p-growl [(value)]="msgs" [style]="{'margin-top':'50px'}"></p-growl>
+<p-fieldset [toggleable]="true">
+    <p-header>Driver From</p-header>
+    <app-driver-form [formGroup]="formGroup" [compulsoryFields]="compulsoryFields"></app-driver-form>
+    <div class="ui-g-12 ui-md-2">
+        <button [disabled]="!formGroup.valid" pButton type="button" label="Save" (click)="submitForm()"></button>
+    </div>
+    <div class="ui-g-12 ui-md-2">
+        <button pButton type="button" label="ReSet" (click)="resetForm()"></button>
+    </div>
+</p-fieldset>
+<p-panel header="List Of Driver">
+    <p-dataTable [value]="datas" [rows]="rows" [paginator]="true" [totalRecords]="totalRecords" [rowsPerPageOptions]="pageSizes" [sortField]="sortF" [sortOrder]="sortO" (onSort)="changeSort($event)" [lazy]="true" (onLazyLoad)="loadCarsLazy($event)" selectionMode="single"
+        [(selection)]="selectedRow" dataKey="id" (onRowDblclick)="dblClickRow($event)">
+        <!-- <p-header>List of Driver</p-header> -->
+        <p-column field="name" header="Name" [sortable]="true"></p-column>
+        <p-column field="mobile" header="Mobile" [sortable]="true"></p-column>
+        <p-column field="vehicleNo" header="Vehicle No." [sortable]="true"></p-column>
+    </p-dataTable>
+    <!-- <p-footer>
+        <button pButton type="button" label="ADD" routerLink="../addDriver"></button>
+    </p-footer> -->
+</p-panel>

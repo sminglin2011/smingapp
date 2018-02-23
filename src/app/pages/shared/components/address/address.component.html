@@ -1,0 +1,27 @@
+<div [formGroup]="formGroup">
+    <div class="ui-g-12 ui-md-4">
+        <div class="ui-inputgroup">
+            <button pButton type="button" icon="fa-search"></button>
+            <input type="text" formControlName="postalCode" pInputText placeholder="Postal Code">
+            <!-- <p-inputMask mask="999999" formControlName="postalCode" placeholder="postal code" tabindex="1"></p-inputMask> -->
+        </div>
+    </div>
+    <div class="ui-g-12 ui-md-4">
+        <div class="ui-inputgroup">
+            <span class="ui-inputgroup-addon"><i class="fa fa-building"></i></span>
+            <input type="text" formControlName="block" pInputText placeholder="Block NO.">
+        </div>
+    </div>
+    <div class="ui-g-12 ui-md-4">
+        <div class="ui-inputgroup">
+            <span class="ui-inputgroup-addon"><i class="fa fa-hashtag"></i></span>
+            <input type="text" formControlName="floorUnit" pInputText placeholder="Unit NO.">
+        </div>
+    </div>
+    <div class="ui-g-12">
+        <div class="ui-inputgroup">
+            <span class="ui-inputgroup-addon"><i class="fa fa-building"></i></span>
+            <input type="text" formControlName="street" pInputText placeholder="Address">
+        </div>
+    </div>
+</div>

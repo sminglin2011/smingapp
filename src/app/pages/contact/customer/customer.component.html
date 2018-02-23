@@ -1,0 +1,39 @@
+<p-growl [(value)]="msgs" [style]="{'margin-top':'50px'}"></p-growl>
+<p-panel header="Customer List">
+    <div class="ui-g">
+        <p-dataTable [value]="datas" [rows]="rows" [paginator]="true" [totalRecords]="totalRecords" [rowsPerPageOptions]="pageSizes" [sortField]="sortF" [sortOrder]="sortO" (onSort)="changeSort($event)" [lazy]="true" (onLazyLoad)="loadCarsLazy($event)" selectionMode="single"
+            [(selection)]="selectedRow" dataKey="id" (onRowDblclick)="dblClickRow($event)">
+            <!-- <p-header>List of Customer</p-header> -->
+            <p-column field="name" header="Name" [sortable]="true"></p-column>
+            <p-column field="email" header="Email" [sortable]="true"></p-column>
+            <p-column field="mobile" header="Mobile" [sortable]="true"></p-column>
+            <p-column field="tel" header="Telephone" [sortable]="true"></p-column>
+            <p-column field="addresses" header="PostalCode">
+                <ng-template let-customer="rowData" pTemplate="body">
+                    {{customer.addresses[0]['postalCode']}}
+                </ng-template>
+            </p-column>
+            <p-column field="addresses" header="Address">
+                <ng-template let-customer="rowData" pTemplate="body">
+                    {{customer.addresses[0]['street']}}
+                </ng-template>
+            </p-column>
+            <p-column field="birthday" header="Birthday" [sortable]="true">
+                <ng-template let-customer="rowData" pTemplate="body">
+                    {{customer.birthday | date: 'dd/MM/yyyy'}}
+                </ng-template>
+            </p-column>
+            <!-- <p-column styleClass="col-button">
+            <ng-template pTemplate="header">
+                Action
+            </ng-template>
+            <ng-template let-car="rowData" pTemplate="body">
+                <button type="button" pButton icon="fa-search"></button>
+            </ng-template>
+        </p-column> -->
+        </p-dataTable>
+    </div>
+    <p-footer>
+        <button pButton type="button" label="ADD" routerLink="../addCustomer"></button>
+    </p-footer>
+</p-panel>

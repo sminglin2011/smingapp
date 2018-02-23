@@ -1,0 +1,10 @@
+{
+    "columns": [
+        { "title": "ID", "field": "id" },
+        { "title": "UserName", "field": "username", "compulsory": true },
+        { "title": "EMAIL", "field": "email" },
+        { "title": "Password", "field": "password" },
+        { "title": "Mobile", "field": "mobile" },
+        { "title": "Join Date", "field": "join_date" }
+    ]
+}

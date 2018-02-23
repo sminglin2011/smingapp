@@ -3,7 +3,8 @@
         { "title": "TINGKAT", "url": "tingkat" },
         { "title": "CATERING", "url": "catering" },
         { "title": "USER", "url": "user" },
-        { "title": "ACCOUNT", "url": "account" }
-
+        { "title": "ACCOUNT", "url": "account" },
+        { "title": "CONTACT", "url": "contact" },
+        { "title": "INVENTORY", "url": "inventory" }
     ]
 }
